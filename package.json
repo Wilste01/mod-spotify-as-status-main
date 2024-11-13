@@ -4,7 +4,8 @@
   "description": "a Gather mod which sets your status to your currently playing track on spotify",
   "main": "dist/index.js",
   "scripts": {
-    "start": "tsc -b && node dist/index.js"
+    "start": "tsc -b && node dist/index.js",
+    "heroku-postbuild": "npm install --production && npm run build"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,6 @@
   },
   "devDependencies": {
     "@types/node": "^16.7.10",
-    "typescript": "4.3.4"
+    "typescript": "^4.3.4"
   }
 }
