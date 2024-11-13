@@ -11,6 +11,12 @@ const CLIENT_SECRET = process.env.CLIENT_SECRET!;
 const ACCESS_TOKEN = process.env.ACCESS_TOKEN!;
 const REFRESH_TOKEN = process.env.REFRESH_TOKEN!;
 
+if (!API_KEY || !SPACE_ID || !CLIENT_ID || !CLIENT_SECRET || !ACCESS_TOKEN || !REFRESH_TOKEN) {
+  console.error("Missing one or more environment variables");
+  process.exit(1);
+}
+
+
 // token refresher setup
 const api = new Updater({ clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
 api.setAccessToken(ACCESS_TOKEN);
