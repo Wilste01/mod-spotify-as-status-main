@@ -1,7 +1,15 @@
-import { API_KEY, SPACE_ID, CLIENT_ID, CLIENT_SECRET, ACCESS_TOKEN, REFRESH_TOKEN } from "./api-key";
 import { Game } from "@gathertown/gather-game-client";
+require('dotenv').config();
 global.WebSocket = require("isomorphic-ws");
 const Updater = require("spotify-oauth-refresher");
+
+// Lägg till miljövariabler
+const API_KEY = process.env.API_KEY!;
+const SPACE_ID = process.env.SPACE_ID!;
+const CLIENT_ID = process.env.CLIENT_ID!;
+const CLIENT_SECRET = process.env.CLIENT_SECRET!;
+const ACCESS_TOKEN = process.env.ACCESS_TOKEN!;
+const REFRESH_TOKEN = process.env.REFRESH_TOKEN!;
 
 // token refresher setup
 const api = new Updater({ clientId: CLIENT_ID, clientSecret: CLIENT_SECRET });
